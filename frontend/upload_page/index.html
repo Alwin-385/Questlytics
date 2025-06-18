@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Questlytics</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <h1 class="logo">Questlytics</h1>
+      <div class="menu">
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul class="menu-list" id="menuList">
+          <li><a href="https://questlytics.vercel.app/">Home</a></li>
+          <li><a href="#" class="active">Overview</a></li>
+          <li>
+            <a href="https://github.com/NivinLouis/Questlytics" target="_blank">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="github-icon" />
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="main">
+      <h2 class="welcome">Welcome</h2>
+      <p class="subtitle">Start by uploading past question papers</p>
+
+      <div class="upload-box">
+        <label class="upload-label">Upload</label>
+        <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+          <p>Drag and drop your files or click to browse.</p>
+          <p class="subtext">Up to 10 MB each (PDF, Docx, JPEG)</p>
+          <div class="upload-icon">⬆️</div>
+          <input type="file" id="fileInput" multiple onchange="handleFiles(this.files)" hidden />
+        </div>
+
+        <div id="fileList" class="file-list"></div>
+      </div>
+
+      <button class="start-btn">Start Analysis</button>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
